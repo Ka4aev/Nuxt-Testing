@@ -19,6 +19,3 @@
 ## FORMATTERS
 - `Eslint`
 - `Prettier`
-
-## AUTHORS
-- `KQraze`
