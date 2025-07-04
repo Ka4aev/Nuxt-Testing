@@ -11,6 +11,7 @@
 - `Vee-validate + Yup`
 - `VueUse`
 - `SCSS`
+- `Nuxt UI`
 
 ## APPROACHES
 - `FSD - Feature Sliced Design`
