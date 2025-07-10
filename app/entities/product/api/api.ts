@@ -6,3 +6,5 @@ export const deleteProduct = (id: number) =>
   $fetch(`/bff/product/${id}`, {
     method: "DELETE",
   });
+
+export const getProductCategories = () => $fetch("/bff/product/categories");

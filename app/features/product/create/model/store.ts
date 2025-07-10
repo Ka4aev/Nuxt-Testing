@@ -3,7 +3,13 @@ import type { CreateProductSchema } from "../lib";
 import { createProduct } from "../api";
 
 export const useStore = () => {
-  const state = reactive<Partial<CreateProductSchema>>({});
+  const state = reactive<CreateProductSchema>({
+    title: "",
+    price: "",
+    images: [],
+    categoryId: "",
+    description: "",
+  });
   const toast = useToast();
 
   const onSubmit = async ({ data }: FormSubmitEvent<CreateProductSchema>) => {
@@ -14,10 +20,11 @@ export const useStore = () => {
         description: "The form has been submitted.",
         color: "success",
       });
-    } catch {
+      navigateTo("/");
+    } catch (error: any) {
       toast.add({
         title: "Error",
-        description: "The form not has been submitted.",
+        description: error.data.data.message || error.data.message,
         color: "error",
       });
     }

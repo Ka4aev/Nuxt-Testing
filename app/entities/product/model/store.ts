@@ -1,4 +1,9 @@
-import { getProducts, getProduct, deleteProduct } from "../api";
+import {
+  getProducts,
+  getProduct,
+  deleteProduct,
+  getProductCategories,
+} from "../api";
 
 export const productsQuery = () =>
   useQuery<Product[]>("products", getProducts, {
@@ -21,4 +26,8 @@ export const deleteProductQuery = (id: number) =>
       clearNuxtData("products");
       clearNuxtData(`product-${id}`);
     },
+  });
+export const categoriesQuery = () =>
+  useQuery<Category[]>("categories", getProductCategories, {
+    onSuccess: (data) => console.log(data),
   });

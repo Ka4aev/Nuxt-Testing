@@ -17,7 +17,8 @@
 </template>
 
 <script setup lang="ts">
-const { data: products } = productEntity.productsQuery();
+const { data: products, refresh } = productEntity.productsQuery();
+onMounted(() => refresh());
 </script>
 
 <style scoped></style>
